@@ -8,6 +8,7 @@
 
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
+  ST_MACRO_0,
   DRAG_SCROLL,
   TOGGLE_SCROLL,
   NAVIGATOR_INC_CPI,
@@ -18,16 +19,16 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(2, KC_A)
-#define DUAL_FUNC_1 LT(14, KC_B)
-#define DUAL_FUNC_2 LT(6, KC_F22)
-#define DUAL_FUNC_3 LT(8, KC_S)
-#define DUAL_FUNC_4 LT(14, KC_F5)
-#define DUAL_FUNC_5 LT(7, KC_F12)
+#define DUAL_FUNC_0 LT(9, KC_E)
+#define DUAL_FUNC_1 LT(2, KC_F20)
+#define DUAL_FUNC_2 LT(8, KC_B)
+#define DUAL_FUNC_3 LT(9, KC_F7)
+#define DUAL_FUNC_4 LT(7, KC_Z)
+#define DUAL_FUNC_5 LT(9, KC_F8)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    DUAL_FUNC_0,    DM_PLY1,        DM_PLY2,        LGUI(LSFT(KC_Z)),KC_MAC_UNDO,    LGUI(KC_SPACE),                                 LALT(LGUI(LCTL(LSFT(KC_A)))),LALT(LGUI(LCTL(LSFT(KC_B)))),LALT(LGUI(LCTL(LSFT(KC_C)))),LALT(LGUI(LCTL(LSFT(KC_D)))),LALT(LGUI(LCTL(LSFT(KC_E)))),LALT(LGUI(LCTL(LSFT(KC_F)))),
+    DUAL_FUNC_0,    DM_PLY1,        DM_PLY2,        LGUI(LSFT(KC_Z)),LGUI(DE_Z),     LGUI(KC_SPACE),                                 LALT(LGUI(LCTL(LSFT(KC_A)))),LALT(LGUI(LCTL(LSFT(KC_B)))),LALT(LGUI(LCTL(LSFT(KC_C)))),LALT(LGUI(LCTL(LSFT(KC_D)))),LALT(LGUI(LCTL(LSFT(KC_E)))),LALT(LGUI(LCTL(LSFT(KC_F)))),
     DUAL_FUNC_1,    MT(MOD_LGUI, KC_TAB),MT(MOD_LSFT, KC_F),MT(MOD_LALT, KC_U),MT(MOD_LCTL, KC_M),KC_V,                                           KC_Q,           MT(MOD_RCTL, KC_L),MT(MOD_RALT, KC_B),MT(MOD_RSFT, KC_DOT),MT(MOD_RGUI, DE_Z),KC_ENTER,       
     KC_ESCAPE,      MT(MOD_LGUI, KC_A),MT(MOD_LSFT, KC_C),MT(MOD_LALT, KC_I),MT(MOD_LCTL, KC_T),KC_D,                                           KC_R,           MT(MOD_RCTL, KC_N),MT(MOD_RALT, KC_H),MT(MOD_RSFT, KC_O),MT(MOD_RGUI, KC_S),QK_REP, 
     SH_MON,         MO(2),          LT(5, KC_P),    DE_Y,           DUAL_FUNC_2,    KC_J,                                           KC_X,           KC_W,           KC_K,           KC_COMMA,       OSM(MOD_LSFT),  QK_AREP, 
@@ -57,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [4] = LAYOUT_voyager(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     KC_NO,          KC_NO,          KC_NO,          LALT(LGUI(KC_UP)),LALT(LCTL(LSFT(KC_1))),KC_NO,                                          LALT(LCTL(LSFT(KC_A))),LALT(LCTL(LSFT(KC_B))),LALT(LCTL(LSFT(KC_C))),LALT(LCTL(LSFT(KC_D))),LALT(LCTL(LSFT(KC_E))),LALT(LCTL(LSFT(KC_F))),
-    LCTL(KC_SCLN),  KC_NO,          KC_NO,          LALT(LGUI(KC_DOWN)),LALT(LCTL(LSFT(KC_0))),KC_NO,                                          LALT(LCTL(LSFT(KC_G))),LALT(LCTL(LSFT(KC_H))),LALT(LCTL(LSFT(KC_I))),LALT(LCTL(LSFT(KC_J))),LALT(LCTL(LSFT(KC_K))),LALT(LCTL(LSFT(KC_Q))),
+    LCTL(KC_SCLN),  KC_NO,          KC_NO,          LALT(LGUI(KC_DOWN)),LALT(LCTL(LSFT(KC_0))),ST_MACRO_0,                                     LALT(LCTL(LSFT(KC_G))),LALT(LCTL(LSFT(KC_H))),LALT(LCTL(LSFT(KC_I))),LALT(LCTL(LSFT(KC_J))),LALT(LCTL(LSFT(KC_K))),LALT(LCTL(LSFT(KC_Q))),
     KC_TRANSPARENT, DUAL_FUNC_3,    DUAL_FUNC_4,    DUAL_FUNC_5,    LGUI(KC_S),     LGUI(LSFT(KC_I)),                                LALT(LCTL(LSFT(KC_L))),LALT(LCTL(LSFT(KC_M))),LALT(LCTL(LSFT(KC_N))),LALT(LCTL(LSFT(KC_O))),LALT(LCTL(LSFT(KC_P))),LALT(LCTL(LSFT(KC_R))),
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
@@ -70,13 +71,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
-  'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R', 
-  'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R', 
-  'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R', 
-  'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R', 
-  '*', '*', '*', '*'
-);
 
 const uint16_t PROGMEM combo0[] = { MT(MOD_LCTL, KC_M), MT(MOD_LCTL, KC_T), COMBO_END};
 const uint16_t PROGMEM combo1[] = { MT(MOD_LALT, KC_U), MT(MOD_LALT, KC_I), COMBO_END};
@@ -204,6 +198,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         wait_ms(2);
         del_mods(QK_MODS_GET_MODS(keycode));
       }
+    }
+    break;
+    case ST_MACRO_0:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LGUI(SS_TAP(X_K))SS_DELAY(100)  SS_TAP(X_S));
     }
     break;
 

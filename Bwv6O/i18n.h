@@ -2,9 +2,8 @@
 #define DE_OE KC_SCLN
 #define DE_UE KC_LBRC
 #define DE_SS KC_MINS
-#define KC_MAC_UNDO LGUI(KC_Z)
-#define DE_Y KC_Z
 #define DE_Z KC_Y
+#define DE_Y KC_Z
 #define DE_DLR S(KC_4)
 #define DE_EXLM S(KC_1)
 #define DE_EQL S(KC_0)
