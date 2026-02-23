@@ -18,12 +18,12 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(3, KC_K)
-#define DUAL_FUNC_1 LT(1, KC_F23)
-#define DUAL_FUNC_2 LT(6, KC_Y)
-#define DUAL_FUNC_3 LT(13, KC_F13)
-#define DUAL_FUNC_4 LT(12, KC_G)
-#define DUAL_FUNC_5 LT(13, KC_F14)
+#define DUAL_FUNC_0 LT(2, KC_A)
+#define DUAL_FUNC_1 LT(14, KC_B)
+#define DUAL_FUNC_2 LT(6, KC_F22)
+#define DUAL_FUNC_3 LT(8, KC_S)
+#define DUAL_FUNC_4 LT(14, KC_F5)
+#define DUAL_FUNC_5 LT(7, KC_F12)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -37,15 +37,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_EQUAL,                                       KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     RALT(KC_E),     LALT(KC_L),     LSFT(KC_SLASH), LALT(KC_5),     LALT(KC_6),     KC_CIRC,                                        DE_EXLM,        KC_NUBS,        LSFT(KC_NUBS),  DE_EQL,         DE_AMPR,        KC_TRANSPARENT, 
     KC_NONUS_HASH,  LALT(LSFT(KC_7)),LSFT(KC_7),     LALT(KC_8),     LALT(KC_9),     LSFT(KC_RBRC),                                  DE_QST,         DE_LPRN,        DE_RPRN,        DE_MINS,        DE_COLN,        KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, DE_DLR,         LALT(KC_7),     LALT(KC_N),     LSFT(KC_EQUAL),                                 DE_PLUS,        DE_PERC,        DE_DQOT,        LSFT(KC_NONUS_HASH),DE_SCLN,        KC_TRANSPARENT, 
-                                                    KC_TRANSPARENT, LT(4, KC_SPACE),                                KC_TRANSPARENT, KC_TRANSPARENT
+    KC_TRANSPARENT, TO(3),          DE_DLR,         LALT(KC_7),     LALT(KC_N),     LSFT(KC_EQUAL),                                 DE_PLUS,        DE_PERC,        DE_DQOT,        LSFT(KC_NONUS_HASH),DE_SCLN,        KC_TRANSPARENT, 
+                                                    KC_TRANSPARENT, LT(4, KC_SPACE),                                KC_TRANSPARENT, TO(3)
   ),
   [2] = LAYOUT_voyager(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_X,           KC_KP_PLUS,     KC_KP_MINUS,    KC_KP_ASTERISK, KC_KP_SLASH,    KC_NO,          
     KC_NO,          KC_PAGE_UP,     KC_BSPC,        KC_UP,          KC_DELETE,      KC_PGDN,                                        KC_BSPC,        KC_1,           KC_2,           KC_3,           KC_DOT,         KC_TRANSPARENT, 
     LGUI(KC_A),     LGUI(KC_LEFT),  KC_LEFT,        KC_DOWN,        KC_RIGHT,       LGUI(KC_RIGHT),                                 KC_TAB,         KC_4,           KC_5,           KC_6,           KC_0,           KC_COMMA,       
     KC_TRANSPARENT, KC_TRANSPARENT, LGUI(KC_X),     LGUI(KC_C),     LGUI(KC_V),     KC_ENTER,                                       DE_COLN,        KC_7,           KC_8,           KC_9,           DE_SCLN,        KC_NO,          
-                                                    KC_TRANSPARENT, LT(4, KC_SPACE),                                KC_TRANSPARENT, KC_TRANSPARENT
+                                                    TO(3),          LT(4, KC_SPACE),                                KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, RGB_TOG,        TOGGLE_LAYER_COLOR,RGB_MODE_FORWARD,RGB_VAD,        RGB_VAI,                                        RGB_SPI,        RGB_SPD,        RGB_HUI,        RGB_HUD,        RGB_SAI,        RGB_SAD,        
