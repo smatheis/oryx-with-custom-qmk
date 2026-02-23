@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     DUAL_FUNC_0,    DM_PLY1,        DM_PLY2,        LGUI(LSFT(KC_Z)),KC_MAC_UNDO,    LGUI(KC_SPACE),                                 LALT(LGUI(LCTL(LSFT(KC_A)))),LALT(LGUI(LCTL(LSFT(KC_B)))),LALT(LGUI(LCTL(LSFT(KC_C)))),LALT(LGUI(LCTL(LSFT(KC_D)))),LALT(LGUI(LCTL(LSFT(KC_E)))),LALT(LGUI(LCTL(LSFT(KC_F)))),
     DUAL_FUNC_1,    MT(MOD_LGUI, KC_TAB),MT(MOD_LSFT, KC_F),MT(MOD_LALT, KC_U),MT(MOD_LCTL, KC_M),KC_V,                                           KC_Q,           MT(MOD_RCTL, KC_L),MT(MOD_RALT, KC_B),MT(MOD_RSFT, KC_DOT),MT(MOD_RGUI, DE_Z),KC_ENTER,       
     KC_ESCAPE,      MT(MOD_LGUI, KC_A),MT(MOD_LSFT, KC_C),MT(MOD_LALT, KC_I),MT(MOD_LCTL, KC_T),KC_D,                                           KC_R,           MT(MOD_RCTL, KC_N),MT(MOD_RALT, KC_H),MT(MOD_RSFT, KC_O),MT(MOD_RGUI, KC_S),KC_TRANSPARENT, 
-    KC_TRANSPARENT, MO(2),          KC_P,           DE_Y,           DUAL_FUNC_2,    KC_J,                                           KC_X,           KC_W,           KC_K,           KC_COMMA,       OSM(MOD_LSFT),  KC_TRANSPARENT, 
+    SH_MON,         MO(2),          KC_P,           DE_Y,           DUAL_FUNC_2,    KC_J,                                           KC_X,           KC_W,           KC_K,           KC_COMMA,       OSM(MOD_LSFT),  KC_TRANSPARENT, 
                                                     MO(1),          LT(4, KC_E),                                    LT(4, KC_SPACE),MO(2)
   ),
   [1] = LAYOUT_voyager(
@@ -82,12 +82,20 @@ const uint16_t PROGMEM combo0[] = { MT(MOD_LCTL, KC_M), MT(MOD_LCTL, KC_T), COMB
 const uint16_t PROGMEM combo1[] = { MT(MOD_LALT, KC_U), MT(MOD_LALT, KC_I), COMBO_END};
 const uint16_t PROGMEM combo2[] = { MT(MOD_LSFT, KC_F), MT(MOD_LSFT, KC_C), COMBO_END};
 const uint16_t PROGMEM combo3[] = { KC_V, KC_D, COMBO_END};
+const uint16_t PROGMEM combo4[] = { DM_PLY1, LGUI(KC_SPACE)};
+const uint16_t PROGMEM combo5[] = { DM_PLY2, LGUI(KC_SPACE)};
+const uint16_t PROGMEM combo6[] = { KC_ESCAPE, LGUI(KC_SPACE)};
+const uint16_t PROGMEM combo7[] = { KC_F1, KC_F2, KC_F3, KC_F4};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, DE_AE),
     COMBO(combo1, DE_OE),
     COMBO(combo2, DE_UE),
     COMBO(combo3, DE_SS),
+    COMBO(combo4, DM_REC1),
+    COMBO(combo5, DM_REC2),
+    COMBO(combo6, DM_RSTP),
+    COMBO(combo7, QK_BOOTLOADER),
 };
 
 
