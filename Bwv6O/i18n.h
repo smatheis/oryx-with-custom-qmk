@@ -1,3 +1,7 @@
+#define DE_AE KC_QUOT
+#define DE_OE KC_SCLN
+#define DE_UE KC_LBRC
+#define DE_SS KC_MINS
 #define KC_MAC_UNDO LGUI(KC_Z)
 #define DE_Y KC_Z
 #define DE_Z KC_Y
