@@ -1,7 +1,6 @@
-#define CHORDAL_HOLD
 #define USB_SUSPEND_WAKEUP_DELAY 0
 #define CAPS_LOCK_STATUS
-#define SERIAL_NUMBER "Bwv6O/MaBxlo"
+#define SERIAL_NUMBER "Bwv6O/x9dvNp"
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 4
 
