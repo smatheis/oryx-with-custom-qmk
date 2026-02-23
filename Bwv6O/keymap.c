@@ -29,8 +29,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     DUAL_FUNC_0,    DM_PLY1,        DM_PLY2,        LGUI(LSFT(KC_Z)),KC_MAC_UNDO,    LGUI(KC_SPACE),                                 LALT(LGUI(LCTL(LSFT(KC_A)))),LALT(LGUI(LCTL(LSFT(KC_B)))),LALT(LGUI(LCTL(LSFT(KC_C)))),LALT(LGUI(LCTL(LSFT(KC_D)))),LALT(LGUI(LCTL(LSFT(KC_E)))),LALT(LGUI(LCTL(LSFT(KC_F)))),
     DUAL_FUNC_1,    MT(MOD_LGUI, KC_TAB),MT(MOD_LSFT, KC_F),MT(MOD_LALT, KC_U),MT(MOD_LCTL, KC_M),KC_V,                                           KC_Q,           MT(MOD_RCTL, KC_L),MT(MOD_RALT, KC_B),MT(MOD_RSFT, KC_DOT),MT(MOD_RGUI, DE_Z),KC_ENTER,       
-    KC_ESCAPE,      MT(MOD_LGUI, KC_A),MT(MOD_LSFT, KC_C),MT(MOD_LALT, KC_I),MT(MOD_LCTL, KC_T),KC_D,                                           KC_R,           MT(MOD_RCTL, KC_N),MT(MOD_RALT, KC_H),MT(MOD_RSFT, KC_O),MT(MOD_RGUI, KC_S),KC_TRANSPARENT, 
-    SH_MON,         MO(2),          LT(5, KC_P),    DE_Y,           DUAL_FUNC_2,    KC_J,                                           KC_X,           KC_W,           KC_K,           KC_COMMA,       OSM(MOD_LSFT),  KC_TRANSPARENT, 
+    KC_ESCAPE,      MT(MOD_LGUI, KC_A),MT(MOD_LSFT, KC_C),MT(MOD_LALT, KC_I),MT(MOD_LCTL, KC_T),KC_D,                                           KC_R,           MT(MOD_RCTL, KC_N),MT(MOD_RALT, KC_H),MT(MOD_RSFT, KC_O),MT(MOD_RGUI, KC_S),QK_REP, 
+    SH_MON,         MO(2),          LT(5, KC_P),    DE_Y,           DUAL_FUNC_2,    KC_J,                                           KC_X,           KC_W,           KC_K,           KC_COMMA,       OSM(MOD_LSFT),  QK_AREP, 
                                                     MO(1),          LT(4, KC_E),                                    LT(4, KC_SPACE),MO(2)
   ),
   [1] = LAYOUT_voyager(
