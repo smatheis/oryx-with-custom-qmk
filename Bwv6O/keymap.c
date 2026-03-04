@@ -9,22 +9,16 @@
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
   ST_MACRO_0,
-  DRAG_SCROLL,
-  TOGGLE_SCROLL,
-  NAVIGATOR_INC_CPI,
-  NAVIGATOR_DEC_CPI,
-  NAVIGATOR_TURBO,
-  NAVIGATOR_AIM
 };
 
 
 
-#define DUAL_FUNC_0 LT(11, KC_M)
-#define DUAL_FUNC_1 LT(2, KC_K)
-#define DUAL_FUNC_2 LT(1, KC_F23)
-#define DUAL_FUNC_3 LT(1, KC_X)
-#define DUAL_FUNC_4 LT(2, KC_F6)
-#define DUAL_FUNC_5 LT(8, KC_F2)
+#define DUAL_FUNC_0 LT(6, KC_M)
+#define DUAL_FUNC_1 LT(13, KC_G)
+#define DUAL_FUNC_2 LT(10, KC_T)
+#define DUAL_FUNC_3 LT(13, KC_F7)
+#define DUAL_FUNC_4 LT(2, KC_F19)
+#define DUAL_FUNC_5 LT(3, KC_F24)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -109,7 +103,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
 
     [4] = { {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {41,255,255}, {41,255,255}, {0,0,0}, {41,255,255}, {0,0,0}, {0,0,0}, {41,255,255}, {41,255,255}, {0,0,0}, {0,0,0}, {41,255,255}, {41,255,255}, {41,255,255}, {41,255,255}, {41,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0} },
 
-    [5] = { {0,245,245}, {0,245,245}, {0,0,0}, {41,255,255}, {41,255,255}, {0,245,245}, {0,0,0}, {31,255,255}, {41,255,255}, {74,255,255}, {41,255,255}, {0,245,245}, {0,0,0}, {31,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {0,245,245}, {0,245,245}, {31,255,255}, {169,255,255}, {41,255,255}, {41,255,255}, {0,0,0}, {131,255,255}, {131,255,255}, {0,245,245}, {41,255,255}, {41,255,255}, {0,0,0}, {0,245,245}, {0,245,245}, {0,245,245}, {41,255,255}, {74,255,255}, {41,255,255}, {31,255,255}, {0,0,0}, {0,245,245}, {74,255,255}, {74,255,255}, {74,255,255}, {31,255,255}, {0,0,0}, {0,0,0}, {41,255,255}, {41,255,255}, {0,0,0}, {31,255,255}, {0,0,0}, {131,255,255}, {131,255,255} },
+    [5] = { {0,245,245}, {0,245,245}, {0,0,0}, {169,255,255}, {169,255,255}, {0,245,245}, {0,0,0}, {31,255,255}, {41,255,255}, {74,255,255}, {41,255,255}, {0,245,245}, {0,0,0}, {31,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {0,245,245}, {0,245,245}, {31,255,255}, {169,255,255}, {169,255,255}, {169,255,255}, {0,0,0}, {131,255,255}, {131,255,255}, {0,245,245}, {169,255,255}, {169,255,255}, {0,0,0}, {0,245,245}, {0,245,245}, {0,245,245}, {41,255,255}, {74,255,255}, {41,255,255}, {31,255,255}, {0,0,0}, {0,245,245}, {74,255,255}, {74,255,255}, {74,255,255}, {31,255,255}, {0,0,0}, {0,0,0}, {169,255,255}, {169,255,255}, {0,0,0}, {31,255,255}, {0,0,0}, {131,255,255}, {131,255,255} },
 
 };
 
@@ -166,10 +160,6 @@ bool rgb_matrix_indicators_user(void) {
 
   return true;
 }
-
-extern bool set_scrolling;
-extern bool navigator_turbo;
-extern bool navigator_aim;
 
 
 
@@ -288,43 +278,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DRAG_SCROLL:
-      if (record->event.pressed) {
-        set_scrolling = true;
-      } else {
-        set_scrolling = false;
-      }
-      return false;
-    case TOGGLE_SCROLL:
-      if (record->event.pressed) {
-        set_scrolling = !set_scrolling;
-      }
-      return false;
-    break;
-  case NAVIGATOR_TURBO:
-    if (record->event.pressed) {
-      navigator_turbo = true;
-    } else {
-      navigator_turbo = false;
-    }
-    return false;
-  case NAVIGATOR_AIM:
-    if (record->event.pressed) {
-      navigator_aim = true;
-    } else {
-      navigator_aim = false;
-    }
-    return false;
-  case NAVIGATOR_INC_CPI:
-    if (record->event.pressed) {
-        pointing_device_set_cpi(1);
-    }
-    return false;
-  case NAVIGATOR_DEC_CPI:
-    if (record->event.pressed) {
-        pointing_device_set_cpi(0);
-    }
-    return false;
     case RGB_SLD:
       if (record->event.pressed) {
         rgblight_mode(1);
