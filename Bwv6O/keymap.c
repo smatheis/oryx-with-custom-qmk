@@ -38,15 +38,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_EQUAL,                                       KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     RALT(KC_E),     LALT(KC_L),     LSFT(KC_SLASH), LALT(KC_5),     LALT(KC_6),     KC_CIRC,                                        DE_EXLM,        KC_NUBS,        LSFT(KC_NUBS),  DE_EQL,         DE_AMPR,        KC_TRANSPARENT, 
     KC_NONUS_HASH,  LALT(LSFT(KC_7)),LSFT(KC_7),    LALT(KC_8),     LALT(KC_9),     LSFT(KC_RBRC),                                  DE_QST,         DE_LPRN,        DE_RPRN,        DE_MINS,        DE_COLN,        KC_TRANSPARENT, 
-    KC_TRANSPARENT, MO(3),          DE_DLR,         LALT(KC_7),     LALT(KC_N),     LSFT(KC_EQUAL),                                 DE_PLUS,        DE_PERC,        DE_DQOT,        LSFT(KC_NONUS_HASH),DE_SCLN,        KC_TRANSPARENT, 
-                                                                    KC_TRANSPARENT, LT(4, KC_SPACE),                                KC_TRANSPARENT, MO(3)
+    KC_TRANSPARENT, KC_TRANSPARENT, DE_DLR,         LALT(KC_7),     LALT(KC_N),     LSFT(KC_EQUAL),                                 DE_PLUS,        DE_PERC,        DE_DQOT,        LSFT(KC_NONUS_HASH),DE_SCLN,        KC_TRANSPARENT, 
+                                                                    KC_TRANSPARENT, LT(4, KC_SPACE),                                KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_X,           KC_KP_PLUS,     KC_KP_MINUS,    KC_KP_ASTERISK, KC_KP_SLASH,    KC_NO,          
     KC_NO,          KC_PAGE_UP,     KC_BSPC,        KC_UP,          KC_DELETE,      KC_PGDN,                                        KC_BSPC,        KC_1,           KC_2,           KC_3,           KC_DOT,         KC_TRANSPARENT, 
     LGUI(KC_A),     LGUI(KC_LEFT),  KC_LEFT,        KC_DOWN,        KC_RIGHT,       LGUI(KC_RIGHT),                                 KC_TAB,         KC_4,           KC_5,           KC_6,           KC_0,           KC_COMMA,       
     KC_TRANSPARENT, KC_TRANSPARENT, LGUI(KC_X),     LGUI(KC_C),     LGUI(KC_V),     KC_ENTER,                                       DE_COLN,        KC_7,           KC_8,           KC_9,           DE_SCLN,        KC_NO,          
-                                                                    MO(3),          LT(4, KC_SPACE),                                KC_TRANSPARENT, KC_TRANSPARENT
+                                                                    KC_TRANSPARENT, LT(4, KC_SPACE),                                KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
     SET_MAC,        RGB_TOG,        TOGGLE_LAYER_COLOR,RGB_MODE_FORWARD,RGB_VAD,    RGB_VAI,                                        RGB_SPI,        RGB_SPD,        RGB_HUI,        RGB_HUD,        RGB_SAI,        RGB_SAD,        
@@ -178,6 +178,10 @@ bool rgb_matrix_indicators_user(void) {
 bool is_app_switching = false;
 bool is_tab_switching = false;
 bool is_linux = false;
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+  return update_tri_layer_state(state, 1, 2, 3);
+}
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // Unregister gui / alt / ctrl from tabbing keycodes
