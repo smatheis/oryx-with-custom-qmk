@@ -180,7 +180,7 @@ bool is_tab_switching = false;
 bool is_linux = false;
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-  return update_tri_layer_state(state, 1, 2, 3);
+  return update_tri_layer_state(state, MO(1), MO(2), MO(3));
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
