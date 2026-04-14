@@ -19,12 +19,12 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(11, KC_F5)
-#define DUAL_FUNC_1 LT(13, KC_P)
-#define DUAL_FUNC_2 LT(15, KC_F7)
-#define DUAL_FUNC_3 LT(1, KC_F21)
-#define DUAL_FUNC_4 LT(14, KC_F19)
-#define DUAL_FUNC_5 LT(1, KC_X)
+#define DUAL_FUNC_0 LT(6, KC_C)
+#define DUAL_FUNC_1 LT(10, KC_5)
+#define DUAL_FUNC_2 LT(8, KC_F8)
+#define DUAL_FUNC_3 LT(14, KC_W)
+#define DUAL_FUNC_4 LT(12, KC_F2)
+#define DUAL_FUNC_5 LT(7, KC_E)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [1] = LAYOUT_voyager(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_EQUAL,                                       KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-    RALT(KC_E),     LALT(KC_L),     LSFT(KC_SLASH), LALT(KC_5),     LALT(KC_6),     KC_CIRC,                                        DE_EXLM,        KC_NUBS,        LSFT(KC_NUBS),  DE_EQL,         DE_AMPR,        KC_TRANSPARENT, 
+    RALT(KC_E),     LALT(KC_L),     LSFT(KC_SLASH), LALT(KC_5),     LALT(KC_6),     DE_CIRC,                                        DE_EXLM,        KC_NUBS,        LSFT(KC_NUBS),  DE_EQL,         DE_AMPR,        KC_TRANSPARENT, 
     KC_NONUS_HASH,  LALT(LSFT(KC_7)),LSFT(KC_7),    LALT(KC_8),     LALT(KC_9),     LSFT(KC_RBRC),                                  DE_QST,         DE_LPRN,        DE_RPRN,        DE_MINS,        DE_COLN,        KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, DE_DLR,         LALT(KC_7),     LALT(KC_N),     LSFT(KC_EQUAL),                                 DE_PLUS,        DE_PERC,        DE_DQOT,        LSFT(KC_NONUS_HASH),DE_SCLN,        KC_TRANSPARENT, 
                                                                     KC_TRANSPARENT, LT(4, KC_SPACE),                                KC_TRANSPARENT, KC_TRANSPARENT
