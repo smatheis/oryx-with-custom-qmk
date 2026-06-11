@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     KC_NO,          KC_NO,          KC_NO,          LALT(LGUI(KC_UP)),LALT(LCTL(LSFT(KC_1))),KC_NO,                                 LALT(LCTL(LSFT(KC_A))),LALT(LCTL(LSFT(KC_B))),LALT(LCTL(LSFT(KC_C))),LALT(LCTL(LSFT(KC_D))),LALT(LCTL(LSFT(KC_E))),LALT(LCTL(LSFT(KC_F))),
     LCTL(KC_SCLN),  KC_NO,          KC_NO,          LALT(LGUI(KC_DOWN)),LALT(LCTL(LSFT(KC_0))),ST_MACRO_0,                          LALT(LCTL(LSFT(KC_G))),LALT(LCTL(LSFT(KC_H))),LALT(LCTL(LSFT(KC_I))),LALT(LCTL(LSFT(KC_J))),LALT(LCTL(LSFT(KC_K))),LALT(LCTL(LSFT(KC_Q))),
-    KC_TRANSPARENT, DUAL_FUNC_3,    DUAL_FUNC_4,    DUAL_FUNC_5,    LGUI(KC_S),     LGUI(LSFT(KC_I)),                               LALT(LCTL(LSFT(KC_L))),LALT(LCTL(LSFT(KC_M))),LALT(LCTL(LSFT(KC_N))),LALT(LCTL(LSFT(KC_O))),LALT(LCTL(LSFT(KC_P))),LALT(LCTL(LSFT(KC_R))),
+    KC_TRANSPARENT, DUAL_FUNC_2,    DUAL_FUNC_3,    DUAL_FUNC_4,    LGUI(KC_S),     LGUI(LSFT(KC_I)),                               LALT(LCTL(LSFT(KC_L))),LALT(LCTL(LSFT(KC_M))),LALT(LCTL(LSFT(KC_N))),LALT(LCTL(LSFT(KC_O))),LALT(LCTL(LSFT(KC_P))),LALT(LCTL(LSFT(KC_R))),
                                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [5] = LAYOUT_voyager(
