@@ -19,12 +19,11 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(10, KC_8)
-#define DUAL_FUNC_1 LT(1, KC_F20)
-#define DUAL_FUNC_2 LT(2, KC_F4)
-#define DUAL_FUNC_3 LT(2, KC_O)
-#define DUAL_FUNC_4 LT(8, KC_4)
-#define DUAL_FUNC_5 LT(3, KC_F6)
+#define DUAL_FUNC_0 LT(2, KC_F8)
+#define DUAL_FUNC_1 LT(1, KC_F11)
+#define DUAL_FUNC_2 LT(10, KC_F19)
+#define DUAL_FUNC_3 LT(4, KC_F11)
+#define DUAL_FUNC_4 LT(13, KC_C)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -70,10 +69,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                     KC_MS_BTN2,     KC_MS_BTN1,                                     KC_MS_BTN1,     KC_MS_BTN2
   ),
   [6] = LAYOUT_voyager(
-    KC_NUBS,        KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           DE_SS,          
-    DUAL_FUNC_5,    KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           DE_Z,           KC_U,           KC_I,           KC_O,           KC_P,           DE_UE,          
+    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           DE_SS,          
+    KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           DE_Z,           KC_U,           KC_I,           KC_O,           KC_P,           DE_UE,          
     KC_LEFT_SHIFT,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           DE_OE,          DE_AE,          
-    KC_TRANSPARENT, DE_Y,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         DE_MINS,        KC_TRANSPARENT, 
+    KC_TRANSPARENT, DE_Y,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         DE_MINS,        KC_NUBS,        
                                                     MO(7),          KC_SPACE,                                       KC_SPACE,       MO(7)
   ),
   [7] = LAYOUT_voyager(
@@ -375,21 +374,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           register_code16(LALT(LSFT(KC_A)));
         } else {
           unregister_code16(LALT(LSFT(KC_A)));
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_5:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(KC_TAB);
-        } else {
-          unregister_code16(KC_TAB);
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(KC_ESCAPE);
-        } else {
-          unregister_code16(KC_ESCAPE);
         }  
       }  
       return false;
